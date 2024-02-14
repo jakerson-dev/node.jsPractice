@@ -1,0 +1,8 @@
+ Student = {
+    studentId : Number,
+    firstName : String,
+    lastName : String,
+    address : String,
+    phoneNumber : String,
+};
+
