@@ -4,5 +4,6 @@
     lastName : String,
     address : String,
     phoneNumber : String,
+    email: String
 };
 

@@ -16,8 +16,8 @@ app.post('/student/addStudent', (request, response) => {
     console.log(request.body);
     //Destructuring studentId , firstName, and lastName
     const {studentId,firstName,lastName} = request.body
-    //send response if success and send message and status (201)
-    response.status(200).json({
+    //send response if success and send message and status (200)
+    response.status(201).json({
         success: true,
         status: 201,
         message: `Student: ${studentId} - ${firstName + ' ' +lastName} is sucessfully added.`
