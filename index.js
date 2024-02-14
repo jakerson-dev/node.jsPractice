@@ -10,10 +10,23 @@ app.use(express.urlencoded());
 //using Port 5000
 const PORT = 5000;
 
+//POST - to add new student record
+app.post('/student/addStudent', (request, response) => {
+    //show the request body
+    console.log(request.body);
+    //Destructuring studentId , firstName, and lastName
+    const {studentId,firstName,lastName} = request.body
+    //send response if success and send message and status (201)
+    response.status(200).json({
+        success: true,
+        status: 201,
+        message: `Student: ${studentId} - ${firstName + ' ' +lastName} is sucessfully added.`
 
+    });
+});
 
 //create listen for express
-app.listen(PORT, () =>{
+app.listen(PORT, () => {
     console.info(`
     Port: ${PORT}
     Env: Development
