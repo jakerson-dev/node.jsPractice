@@ -4,6 +4,7 @@
     lastName : String,
     address : String,
     phoneNumber : String,
-    email: String
+    email: String,
+    isActive: Bolean
 };
 
