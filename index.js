@@ -10,6 +10,17 @@ app.use(express.urlencoded());
 //using Port 5000
 const PORT = 5000;
 
+//GET - Welcome page
+app.get('/', (_, response) => {
+  //send response and the welcome
+    response.status(200).json(
+        {
+            success: true,
+            status: 200,
+            message: 'Welcome'
+        }
+    );
+});
 
 //GET - fetch all student record 
 app.get('/student', (_, response) => {
