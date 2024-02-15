@@ -51,6 +51,19 @@ app.post('/student/addStudent', (request, response) => {
     });
 });
 
+//PATCH - to update student record
+app.patch('/student/update', (request, response) => {
+    //show the request body
+    console.log(request.body);
+    //send response if success and send message and status (200)
+    response.status(200).json({
+        success: true,
+        status: 200,
+        message: `Student with ID number (${request.body.studentId}) is sucessfully updated.`
+
+    });
+});
+
 //create listen for express
 app.listen(PORT, () => {
     console.info(`
