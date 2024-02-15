@@ -12,7 +12,7 @@ const PORT = 5000;
 
 //GET - Welcome page
 app.get('/', (_, response) => {
-  //send response and the welcome
+    //send response and the welcome
     response.status(200).json(
         {
             success: true,
@@ -26,7 +26,7 @@ app.get('/', (_, response) => {
 app.get('/student', (_, response) => {
     //query for example to get all the student data
     const data = {};//select * from Student
-  //send response and the data
+    //send response and the data
     response.status(200).json(
         {
             success: true,
@@ -63,6 +63,17 @@ app.patch('/student/update', (request, response) => {
 
     });
 });
+
+//DELETE - delete student record
+app.delete('/student/delete/:studentId', (request, response) => {
+    console.log(request.params)
+    const {studentId} = request.params;
+    response.status(200).json({
+        success: true,
+        status: 200,
+        message: `Student with ID number (${studentId}) is sucessfully deleted.`
+    });
+})
 
 //create listen for express
 app.listen(PORT, () => {
