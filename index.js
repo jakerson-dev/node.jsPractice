@@ -36,6 +36,50 @@ app.get('/student', (_, response) => {
     );
 });
 
+//GET - fetch all active student record 
+app.get('/student/active', (_, response) => {
+    //query for example to get all active student data
+    const data = {};//select * from Student
+    //send response and the data
+    response.status(200).json(
+        {
+            success: true,
+            status: 200,
+            message: "Active students",
+            data: data
+        }
+    );
+});
+
+//GET - fetch all inactive student record 
+app.get('/student/inactive', (_, response) => {
+    //query for example to get all inactive student data
+    const data = {};//select * from Student
+    //send response and the data
+    response.status(200).json(
+        {
+            success: true,
+            status: 200,
+            message: "Inactive students",
+            data: data
+        }
+    );
+});
+
+//GET - fetch student record by studentId
+app.get('/student/:studentId', (request, response) => {
+    //query for example to get student data by studentId
+    const data = {};//select * from Student
+    //send response and the data
+    console.log(request.params)
+    const {studentId} = request.params;
+    response.status(200).json({
+        success: true,
+        status: 200,
+        message: `Student with ID number (${studentId}) is sucessfully found.`
+    });
+});
+
 //POST - to add new student record
 app.post('/student/addStudent', (request, response) => {
     //show the request body
