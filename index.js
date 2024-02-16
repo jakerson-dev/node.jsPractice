@@ -7,8 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 
-//using Port 5000
-const PORT = 5000;
+//using Port 4000
+const PORT = 4000;
 
 //GET - Welcome page
 app.get('/', (_, response) => {
